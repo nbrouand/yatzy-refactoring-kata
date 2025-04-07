@@ -91,14 +91,14 @@ public class Yatzy1Test {
         public void score_small_straight() {
             assertEquals(15, smallStraight(of(1, 2, 3, 4, 5)));
             assertEquals(15, smallStraight(of(2, 3, 4, 5, 1)));
-            assertEquals(0,  smallStraight(of(1, 2, 2, 4, 5)));
+            assertEquals(0, smallStraight(of(1, 2, 2, 4, 5)));
         }
 
         @Test
         public void score_large_straight() {
             assertEquals(20, largeStraight(of(6, 2, 3, 4, 5)));
             assertEquals(20, largeStraight(of(2, 3, 4, 5, 6)));
-            assertEquals(0,  largeStraight(of(1, 2, 2, 4, 5)));
+            assertEquals(0, largeStraight(of(1, 2, 2, 4, 5)));
         }
 
         @Test

@@ -1,6 +1,5 @@
 package org.codingdojo.yatzy1;
 
-import java.util.Collections;
 import java.util.List;
 
 import static java.util.Collections.frequency;
@@ -38,15 +37,6 @@ public class Yatzy1 {
             .sum();
     }
 
-    public static int pair(List<Integer> dices) {
-        for (int i = 6; i >= 1; i--) {
-            if (frequency(dices, i) >= 2) {
-                return i * 2;
-            }
-        }
-        return 0;
-    }
-
     public static int twoPair(List<Integer> dices) {
         int tmp = 0;
         for (int i = 6; i >= 1; i--) {
@@ -57,40 +47,42 @@ public class Yatzy1 {
         return tmp;
     }
 
+    public static int pair(List<Integer> dices) {
+        return nOfAKind(dices, 2);
+    }
+
     public static int threeOfAKind(List<Integer> dices) {
-        for (int i = 6; i >= 1; i--) {
-            if (frequency(dices, i) >= 3) {
-                return i * 3;
-            }
-        }
-        return 0;
+        return nOfAKind(dices, 3);
     }
 
     public static int fourOfAKind(List<Integer> dices) {
+        return nOfAKind(dices, 4);
+    }
+
+    private static int nOfAKind(List<Integer> dices, int n) {
         for (int i = 6; i >= 1; i--) {
-            if (frequency(dices, i) >= 3) {
-                return i * 4;
+            if (frequency(dices, i) >= n) {
+                return i * n;
             }
         }
         return 0;
     }
 
     public static int smallStraight(List<Integer> dices) {
-        for (int i = 1; i <= 5; i++) {
-            if (!dices.contains(i)) {
-                return 0;
-            }
-        }
-        return 15;
+        return straight(dices, 1, 5, 15);
     }
 
     public static int largeStraight(List<Integer> dices) {
-        for (int i = 2; i <= 6; i++) {
+        return straight(dices, 2, 6, 20);
+    }
+
+    private static int straight(List<Integer> dices, int start, int end, int score) {
+        for (int i = start; i <= end; i++) {
             if (!dices.contains(i)) {
                 return 0;
             }
         }
-        return 20;
+        return score;
     }
 
     public static int fullHouse(List<Integer> dices) {

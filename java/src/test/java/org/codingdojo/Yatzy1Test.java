@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import static java.util.List.of;
 import static org.codingdojo.yatzy1.Yatzy1.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,43 +17,43 @@ public class Yatzy1Test {
     class UpperSection {
         @Test
         public void score_aces() {
-            assertEquals(1, ones(1, 2, 3, 4, 5));
-            assertEquals(2, ones(1, 2, 1, 4, 5));
-            assertEquals(0, ones(6, 2, 2, 4, 5));
-            assertEquals(4, ones(1, 2, 1, 1, 1));
+            assertEquals(1, ones(of(1, 2, 3, 4, 5)));
+            assertEquals(2, ones(of(1, 2, 1, 4, 5)));
+            assertEquals(0, ones(of(6, 2, 2, 4, 5)));
+            assertEquals(4, ones(of(1, 2, 1, 1, 1)));
         }
 
         @Test
         public void score_twos() {
-            assertEquals(4, twos(1, 2, 3, 2, 6));
-            assertEquals(10, twos(2, 2, 2, 2, 2));
+            assertEquals(4, twos(of(1, 2, 3, 2, 6)));
+            assertEquals(10, twos(of(2, 2, 2, 2, 2)));
         }
 
         @Test
         public void score_threes() {
-            assertEquals(6, threes(1, 2, 3, 2, 3));
-            assertEquals(12, threes(2, 3, 3, 3, 3));
+            assertEquals(6, threes(of(1, 2, 3, 2, 3)));
+            assertEquals(12, threes(of(2, 3, 3, 3, 3)));
         }
 
         @Test
         public void score_fours() {
-            assertEquals(12, new Yatzy1(4, 4, 4, 5, 5).fours());
-            assertEquals(8, new Yatzy1(4, 4, 5, 5, 5).fours());
-            assertEquals(4, new Yatzy1(4, 5, 5, 5, 5).fours());
+            assertEquals(12, fours(of(4, 4, 4, 5, 5)));
+            assertEquals(8, fours(of(4, 4, 5, 5, 5)));
+            assertEquals(4, fours(of(4, 5, 5, 5, 5)));
         }
 
         @Test
         public void score_fives() {
-            assertEquals(10, new Yatzy1(4, 4, 4, 5, 5).fives());
-            assertEquals(15, new Yatzy1(4, 4, 5, 5, 5).fives());
-            assertEquals(20, new Yatzy1(4, 5, 5, 5, 5).fives());
+            assertEquals(10, fives(of(4, 4, 4, 5, 5)));
+            assertEquals(15, fives(of(4, 4, 5, 5, 5)));
+            assertEquals(20, fives(of(4, 5, 5, 5, 5)));
         }
 
         @Test
         public void score_sixes() {
-            assertEquals(0, new Yatzy1(4, 4, 4, 5, 5).sixes());
-            assertEquals(6, new Yatzy1(4, 4, 6, 5, 5).sixes());
-            assertEquals(18, new Yatzy1(6, 5, 6, 6, 5).sixes());
+            assertEquals(0, sixes(of(4, 4, 4, 5, 5)));
+            assertEquals(6, sixes(of(4, 4, 6, 5, 5)));
+            assertEquals(18, sixes(of(6, 5, 6, 6, 5)));
         }
     }
 

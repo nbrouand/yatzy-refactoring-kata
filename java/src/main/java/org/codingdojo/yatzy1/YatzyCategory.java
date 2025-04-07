@@ -3,7 +3,7 @@ package org.codingdojo.yatzy1;
 import java.util.List;
 import java.util.function.Function;
 
-public enum YatzyGame {
+public enum YatzyCategory {
     ONES(UpperSectionScorer::ones),
     TWOS(UpperSectionScorer::twos),
     THREES(UpperSectionScorer::threes),
@@ -12,7 +12,7 @@ public enum YatzyGame {
     SIXES(UpperSectionScorer::sixes),
 
     PAIR(NOfAKindScorer::pair),
-    TWO_PAIR(TwoPairScorer::twoPair),
+    TWO_PAIRS(TwoPairScorer::twoPair),
     THREE_OF_A_KIND(NOfAKindScorer::threeOfAKind),
     FOUR_OF_A_KIND(NOfAKindScorer::fourOfAKind),
     SMALL_STRAIGHT(StraightScorer::smallStraight),
@@ -23,7 +23,7 @@ public enum YatzyGame {
 
     private final Function<List<Integer>, Integer> scoreFunction;
 
-    YatzyGame(Function<List<Integer>, Integer> scoreFunction) {
+    YatzyCategory(Function<List<Integer>, Integer> scoreFunction) {
         this.scoreFunction = scoreFunction;
     }
 

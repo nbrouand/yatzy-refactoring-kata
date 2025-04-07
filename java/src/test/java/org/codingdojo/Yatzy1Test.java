@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static java.util.List.of;
-import static org.codingdojo.yatzy1.YatzyGame.*;
+import static org.codingdojo.yatzy1.YatzyCategory.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Yatzy game scoring")
@@ -68,8 +68,8 @@ public class Yatzy1Test {
 
         @Test
         public void score_two_pair() {
-            assertEquals(16, TWO_PAIR.score(of(3, 3, 5, 4, 5)));
-            assertEquals(16, TWO_PAIR.score(of(3, 3, 5, 5, 5)));
+            assertEquals(16, TWO_PAIRS.score(of(3, 3, 5, 4, 5)));
+            assertEquals(16, TWO_PAIRS.score(of(3, 3, 5, 5, 5)));
         }
 
         @Test

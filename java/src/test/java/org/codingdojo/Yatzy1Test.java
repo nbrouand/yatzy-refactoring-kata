@@ -1,6 +1,5 @@
 package org.codingdojo;
 
-import org.codingdojo.yatzy1.Yatzy1;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -62,62 +61,64 @@ public class Yatzy1Test {
     class LowerSection {
         @Test
         public void score_one_pair() {
-            assertEquals(6, new Yatzy1().score_pair(3, 4, 3, 5, 6));
-            assertEquals(10, new Yatzy1().score_pair(5, 3, 3, 3, 5));
-            assertEquals(12, new Yatzy1().score_pair(5, 3, 6, 6, 5));
+            assertEquals(6, pair(of(3, 4, 3, 5, 6)));
+            assertEquals(10, pair(of(5, 3, 3, 3, 5)));
+            assertEquals(12, pair(of(5, 3, 6, 6, 5)));
         }
 
         @Test
         public void score_two_pair() {
-            assertEquals(16, Yatzy1.two_pair(3, 3, 5, 4, 5));
-            assertEquals(16, Yatzy1.two_pair(3, 3, 5, 5, 5));
+            assertEquals(16, twoPair(of(3, 3, 5, 4, 5)));
+            assertEquals(16, twoPair(of(3, 3, 5, 5, 5)));
         }
 
         @Test
         public void score_three_of_a_kind() {
-            assertEquals(9, Yatzy1.three_of_a_kind(3, 3, 3, 4, 5));
-            assertEquals(15, Yatzy1.three_of_a_kind(5, 3, 5, 4, 5));
-            assertEquals(9, Yatzy1.three_of_a_kind(3, 3, 3, 3, 5));
+            assertEquals(9, threeOfAKind(of(3, 3, 3, 4, 5)));
+            assertEquals(15, threeOfAKind(of(5, 3, 5, 4, 5)));
+            assertEquals(9, threeOfAKind(of(3, 3, 3, 3, 5)));
+            assertEquals(9, threeOfAKind(of(3, 3, 3, 3, 3)));
         }
 
         @Test
         public void score_four_of_a_kind() {
-            assertEquals(12, Yatzy1.four_of_a_kind(3, 3, 3, 3, 5));
-            assertEquals(20, Yatzy1.four_of_a_kind(5, 5, 5, 4, 5));
-            assertEquals(9, Yatzy1.three_of_a_kind(3, 3, 3, 3, 3));
+            assertEquals(12, fourOfAKind(of(3, 3, 3, 3, 5)));
+            assertEquals(20, fourOfAKind(of(5, 5, 5, 4, 5)));
+            assertEquals(12, fourOfAKind(of(3, 3, 3, 3, 3)));
         }
 
         @Test
         public void score_small_straight() {
-            assertEquals(15, Yatzy1.smallStraight(1, 2, 3, 4, 5));
-            assertEquals(15, Yatzy1.smallStraight(2, 3, 4, 5, 1));
-            assertEquals(0, Yatzy1.smallStraight(1, 2, 2, 4, 5));
+            assertEquals(15, smallStraight(of(1, 2, 3, 4, 5)));
+            assertEquals(15, smallStraight(of(2, 3, 4, 5, 1)));
+            assertEquals(0,  smallStraight(of(1, 2, 2, 4, 5)));
         }
 
         @Test
         public void score_large_straight() {
-            assertEquals(20, Yatzy1.largeStraight(6, 2, 3, 4, 5));
-            assertEquals(20, Yatzy1.largeStraight(2, 3, 4, 5, 6));
-            assertEquals(0, Yatzy1.largeStraight(1, 2, 2, 4, 5));
+            assertEquals(20, largeStraight(of(6, 2, 3, 4, 5)));
+            assertEquals(20, largeStraight(of(2, 3, 4, 5, 6)));
+            assertEquals(0,  largeStraight(of(1, 2, 2, 4, 5)));
         }
 
         @Test
         public void score_full_house() {
-            assertEquals(18, Yatzy1.fullHouse(6, 2, 2, 2, 6));
-            assertEquals(0, Yatzy1.fullHouse(2, 3, 4, 5, 6));
+            assertEquals(18, fullHouse(of(6, 2, 2, 2, 6)));
+            assertEquals(0, fullHouse(of(2, 3, 4, 5, 6)));
+            assertEquals(8, fullHouse(of(2, 2, 2, 1, 1)));
         }
 
         @Test
         public void score_yatzy() {
-            assertEquals(50, Yatzy1.yatzy(4, 4, 4, 4, 4));
-            assertEquals(50, Yatzy1.yatzy(6, 6, 6, 6, 6));
-            assertEquals(0, Yatzy1.yatzy(6, 6, 6, 6, 3));
+            assertEquals(50, yatzy(of(4, 4, 4, 4, 4)));
+            assertEquals(50, yatzy(of(6, 6, 6, 6, 6)));
+            assertEquals(0, yatzy(of(6, 6, 6, 6, 3)));
         }
 
         @Test
         public void score_chance() {
-            assertEquals(15, Yatzy1.chance(2, 3, 4, 5, 1));
-            assertEquals(16, Yatzy1.chance(3, 3, 4, 5, 1));
+            assertEquals(15, chance(of(2, 3, 4, 5, 1)));
+            assertEquals(16, chance(of(3, 3, 4, 5, 1)));
         }
     }
 }

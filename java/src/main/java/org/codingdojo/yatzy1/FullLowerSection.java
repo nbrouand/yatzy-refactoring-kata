@@ -5,7 +5,7 @@ import java.util.List;
 import static java.util.Collections.frequency;
 import static org.codingdojo.yatzy1.ChanceScorer.chance;
 
-public class FullLowerSection {
+class FullLowerSection {
 
     static int fullHouse(List<Integer> dices) {
         boolean hasPair = false;

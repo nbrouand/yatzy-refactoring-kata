@@ -2,7 +2,7 @@ package org.codingdojo.yatzy1;
 
 import java.util.List;
 
-public class StraightScorer {
+class StraightScorer {
 
     static int smallStraight(List<Integer> dices) {
         return straight(dices, 1, 5, 15);

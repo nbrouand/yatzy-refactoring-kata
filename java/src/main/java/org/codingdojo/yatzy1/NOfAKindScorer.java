@@ -4,17 +4,17 @@ import java.util.List;
 
 import static java.util.Collections.frequency;
 
-public class NOfAKindScorer {
+class NOfAKindScorer {
 
-    public static int pair(List<Integer> dices) {
+    static int pair(List<Integer> dices) {
         return nOfAKind(dices, 2);
     }
 
-    public static int threeOfAKind(List<Integer> dices) {
+    static int threeOfAKind(List<Integer> dices) {
         return nOfAKind(dices, 3);
     }
 
-    public static int fourOfAKind(List<Integer> dices) {
+    static int fourOfAKind(List<Integer> dices) {
         return nOfAKind(dices, 4);
     }
 

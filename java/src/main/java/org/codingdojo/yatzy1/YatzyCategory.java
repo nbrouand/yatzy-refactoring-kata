@@ -3,7 +3,7 @@ package org.codingdojo.yatzy1;
 import java.util.List;
 import java.util.function.Function;
 
-public enum YatzyCategory {
+enum YatzyCategory {
     ONES(UpperSectionScorer::ones),
     TWOS(UpperSectionScorer::twos),
     THREES(UpperSectionScorer::threes),

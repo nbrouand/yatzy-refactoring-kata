@@ -2,7 +2,7 @@ package org.codingdojo.yatzy1;
 
 import java.util.List;
 
-public class UpperSectionScorer {
+class UpperSectionScorer {
 
     static int ones(List<Integer> dices) {
         return scoreNumber(1, dices);
